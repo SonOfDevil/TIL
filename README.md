@@ -84,3 +84,43 @@ component에 속성(prop)을 사용하여 전달하고, 전달한 속성을 반�
 ### React 프로젝트 디렉토리 구조
 
 학습완료
+
+---
+
+## 1주차 수요일 학습
+
+### Prettier - Code formatter
+
+### Formatting Toggle
+
+포메터를 켜고/끄는걸 쉽게 해주는 확장
+
+### React Snippets
+
+### React Pure To Class
+
+react 함수형 component를 class component로 변경해주는 확장
+
+### Auto Import
+
+componenet를 입력하면 자동으로 module을 import 시켜주는 확장
+
+### Import Cost
+
+import로 불러온 module의 cost를 표기해주는 확장
+
+### Auto Complete Tag
+
+tag를 자동으로 열고/닫을때 표기해주는 확장
+
+### Bracket Pair Colorizer 2
+
+### Color Highlight & Manager
+
+javascript에서 color를 관리해주는 확장
+
+### Image preview
+
+### Translator
+
+---
