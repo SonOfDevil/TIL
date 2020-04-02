@@ -124,3 +124,45 @@ javascript에서 color를 관리해주는 확장
 ### Translator
 
 ---
+
+## 1주차 목요일 학습
+
+1. Virtual DOM
+
+### 환경 설정
+
+### Real DOM 컨트롤
+
+### Virtual DOM 컨트롤
+
+### Virtual DOM Tree 비교 & 패치
+
+### Virtual DOM 배열 순환
+
+### Virtual DOM 제거
+
+### Virtual DOM 추가
+
+virtual DOM의 영상 실습 완료
+
+2. JSX ➪ React 요소
+
+### React 요소를 만드는 2가지 방법
+
+- npx create-react-app <프로젝트-이름>
+  으로 react project 생성
+- JSX를 사용하는게 정신건강에 좋다!!!
+
+### 가상 DOM이란?
+
+h.js - virtual DOM을 만들어주는 역할
+createElement.js - virtual DOM을 실제 DOM에 붙여주는 역할
+diff.js - DOM의 변화를 감지하는 역할
+patch.js - DOM을 update 하는 역할
+
+### JSX 코드가 Babel 컴파일러를 만나면?
+
+Babel을 이용해서 JSX를 React.createElement()로 자동 변경해줌.
+JSX가 작업이 쉽기때문에 JSX로 만듬.
+
+---
