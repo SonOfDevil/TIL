@@ -167,6 +167,8 @@ JSX가 작업이 쉽기때문에 JSX로 만듬.
 
 ---
 
+## 1주차 금요일 학습
+
 ## JSX 활용
 
 ### 데이터 바인딩이란?
@@ -202,5 +204,67 @@ JSX에서 inline으로 조건식(3항식, 논리연산자)을 사용한 조건�
 - role, aria- 는 원래 사용 그대로 사용.
 - 콘텐츠가 없는 요소는 항상 닫아주어야만 한다.(img, br, area 등등)
 - root 요소는 1개만 사용해야한다. 부득이 root 요소를 2개 이상 사용해야만 할때는, <React.Fragment></React.Fragment>로 감싸 주면 rendering 될때 이 부분은 반영 되지 않는다.
+
+---
+
+## 2주차 월요일 학습
+
+1. 컴포넌트 & 전달 속성(props)
+
+### React 함수형 컴포넌트
+
+- 함수명 첫글자를 대문자 사용 권장
+- 함수형 컨포넌트 생성
+  cont 함수명 = () => {
+  return (
+  // JSX
+  )
+  }
+
+const function 함수명() {
+render(){
+return (
+// JSX
+)
+}
+}
+
+- 컴포넌트는 <함수명 />을 사용하여 불러옴.
+
+### React 클래스 컴포넌트
+
+- 클래스 컨포넌트 생성
+  class 함수명 extends React.Comopnent {
+  return (JSX)
+  }
+- 'react pure to class'를 사용하여 함수형 컨포넌트를 클래스 컨포넌트로 변환하여 사용 하면 편하다.
+- constructor를 사용해 props를 전달해 줘야만 한다.
+
+### React 컴포넌트 import, export / props
+
+- 구조분해 할당.. 어려움... ㅠ.,ㅜ
+- children을 사용하여 외부에서 전달받은 모듈의 유연하게 바꿀 수 있게 해준다.(markup을 전달 받은 모듈과 다른 형태로 바꿀 수 있음)
+
+### React 컴포넌트 관리 (추출)
+
+단축키 rafc : create a React Arrow function component
+단축키 rcc : create a React conponent class
+
+conponents를 분리/분류하여 세부적으로 나누어 놓으면 재사용하기 쉬움. (재사용하기 쉽게 만듣어야함)
+
+2. 전달 속성(props) 검사
+
+### JavaScript 타입 검사
+
+typeof의 오류 때문에 data type에 대한 오류검사를 반드시 해 주어야만 한다.
+
+### PropTypes를 활용해 컴포넌트 props 검사
+
+propTypes를 사용해 검사 - npm i prop-types로 설치
+propTypes는 전달된 props의 속성을 원하는 type으로 검사하고 맞지 않은 type일때 오류를 발생 시켜 원하는 결과가 출력 되게 설정하는데 도움을 줄 수 있다.
+
+### PropTypes 속성 기본 값 defaultProps 설정
+
+props이 전달 되지 않았을때, 기본값으로 설정을 할 수 있다.
 
 ---
