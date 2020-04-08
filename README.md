@@ -319,3 +319,67 @@ props이 전달 되지 않았을때, 기본값으로 설정을 할 수 있다.
    componentDidCatch() : 자손 컴포넌트 오류 발생 시 호출. 오류 위치를 알려주는 메서드.
 
 ---
+
+## 2주차 수요일 학습
+
+1. 이벤트 핸들링
+
+### React 이벤트 핸들링
+
+- 이벤트 속성 이름은 camelCase 형식으로 작성 (예: onClick)
+- 속성 값에 문자열 대신 JSX 형식으로 메서드를 연결 (예: onClick={ onClickHandler })
+- 브라우저 기본 동작을 중단하려면 반드시 e.preventDefault()를 사용
+
+React가 지원하는 이벤트
+https://ko.reactjs.org/docs/events.html#supported-events
+
+- e.target, e.currentTarget을 사용해 해당 대상을 찾을 수 있음.
+
+이벤트를 외부에 분리해서 dataBinding을 통해 연결해 사용하면 재사용성을 높일 수 있다.
+
+### React 이벤트 핸들러와 this
+
+- 함수형 컨포넌트에서는 this를 사용 할 수 없어서 고민 할 이유가 없지만, 클래스 컴포넌트에서는 this를 사용해야 한다.
+- class 컨포넌트에서 this를 사용하기 위해서는 constructor에 this를 등록해 주어야 하는데, 매번 등록하면 코드양이 많아지고 복잡해지므로 inline으로 .bind(this)를 붙여 주고 사용 할 수 있다.(예: onclick = {this.handleLinkClick.bind(this)} )
+  또는 화살표 함수를 사용 ( onclick={(e) => this.handleLinkClick(e)} )
+  또는 class field 문법을 사용한다.
+
+  ```
+  handdleLinkClick = (e) => {
+    console.log(e.target)
+    console.log(this)
+    this.otherMemberMethod()
+    e.preventDefault()
+  }
+  render()  {
+    <a
+      onClick={this.handleLinkClick}
+    >
+    </a>
+  }
+  ```
+
+2. 컴포넌트 통신
+
+### React 컴포넌트 간 통신이 필요한 이유
+
+- 클래스 컨포넌트는 컨포넌트 내에서 state를 관리하므로 외부 컨포넌트의 data를 공유하기 위해서는 rule을 지켜서 사용해야만 한다.
+- Lefting State Up(부모/자식간 통신) - 상위/하위 일때, 부모가 state를 관리하고 data를 공유/통신
+
+### 부모 컴포넌트와 자식 컴포넌트 사이의 props ⇌ callback
+
+- 부모는 props를 함수로 전달
+- 자식은 callback 반환
+
+### 복잡한 컴포넌트 트리 구조에서 props ⇌ callback의 문제
+
+복잡한 컨포넌트 구조에서 props/state의 위치가 부모와 자식의 여러개층을 거칠때 매우 복잡한 과정을 거쳐서 callback을 전달 해줘야만 하는 문제 발생.
+
+### 상태 관리를 효율적으로 관리하기 위한 방법 Context, React Redux
+
+위의 문제를 대안이 context API, React Redux
+
+- Context API는 컨포넌트의 재사용을 할 수 없게 만들기 때문에 되도록 지양하거나 한정적으로 사용 할 것.
+- React Redux : 모든 컨포넌트가 접근 가능한 Store라는 저장소를 만들고 dispatch(요청), update 하여 관리 해준다.
+
+---
