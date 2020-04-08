@@ -268,3 +268,54 @@ propTypes는 전달된 props의 속성을 원하는 type으로 검사하고 맞�
 props이 전달 되지 않았을때, 기본값으로 설정을 할 수 있다.
 
 ---
+
+## 2주차 화요일 학습
+
+컴포넌트 상태(state) & 라이프 사이클 훅
+
+### 클래스 컴포넌트의 state 란?
+
+- 컴포넌트를 만들때 2가지 방법(함수형, 클래스 컴포넌트)으로 만들 수 있다.
+- 함수형 컴포넌트는 props(속성) 설정만 가능하며, 불변(immutable)하다.
+- props는 외부에서 전달 되는 data, state는 컴포넌트 자체가 가질 수 있고 변경 가능한 data.
+- 클래스 컴포넌트는 state와 lifecycle hook을 가질 수 있고, update를 통해 값을 동적으로 변경 할 수 있다. this도 사용 가능.
+- 함수형 컴포넌트는 코드가 간결해서, 상태값을 변경 하지 않는 경우 사용 빈도수가 많다. 반드시 둘 중에 하나를 써야 하는것은 아니고 필요에 따라 사용 하면 됨.
+- class field 문법 : constructor(생성자 메서드)를 사용하지 않아도 됨(간결/편함)
+
+### 컴포넌트 라이프 사이클 훅(Life Cycle Hooks) 이란?
+
+- 마운팅
+- 업데이팅
+- 언마운팅
+
+### 생성 시점의 라이프 사이클 훅
+
+1. 마운팅
+   constructor() : 컴포넌트 생성 시점에 호출
+   static getDerivedStateFromProps() : 전달된 상태 및 속성을 가져와 설정하는 시점에 호출. 잘 사용은 하지 않지만, props를 받은 시점에 state update가 필요 할때 사용.
+   render() : 컴포넌트 렌더링 시점에 호출
+   componentDidMount() : DOM에 마운트 된 이후 시점에 호출
+
+   - lifecycle hook에서는 DOM요소에 접근 할 수 없지만,componentDidMount() cycle hook에서는 DOM 접근 가능하고, 그로 인해 side effect 발생 가능(React의 손을 벗어났으니 처리 못함. 관리가 안됨)
+
+2. 업데이팅
+   static getDerivedStateFromProps() : 전달된 상태 및 속성을 가져와 설정하는 시점에 호출 (업데이트)
+   shouldComponentUpdate() : 컴포넌트 업데이트 예정 시점에 호출 (업데이트 하거나, 안 하거나). 성능 최적화를 위해 사용.
+   render() : 컴포넌트 렌더링 (업데이트)
+   getSnapshotBeforeUpdate() : 컴포넌트 업데이트 전 스냅샷 가져오는 시점에 호출
+   componentDidUpdate() : 컴포넌트 업데이트 이후 시점에 호출
+
+- props, state는 immutable(불변)이다. 수정은 안됨. 'setState'를 통해 '교체만' 가능하다.
+
+### 업데이트, 제거 시점의 라이프 사이클 훅
+
+3. 언마운팅
+   componentWillUnmount() : 컴포넌트 제거 예정 시점에 호출
+
+### 오류 발생 시점의 라이프 사이클 훅
+
+4. 오류 처리
+   static getDerivedStateFromError() : 자손 컴포넌트 오류 발생 시 호출. 상황에 따라서 state를 false로 정의 해 놓고, 오류 발생시 true로 반환 및 메시지 출력 해줄 수 있음.
+   componentDidCatch() : 자손 컴포넌트 오류 발생 시 호출. 오류 위치를 알려주는 메서드.
+
+---
