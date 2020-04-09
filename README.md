@@ -383,3 +383,19 @@ https://ko.reactjs.org/docs/events.html#supported-events
 - React Redux : 모든 컨포넌트가 접근 가능한 Store라는 저장소를 만들고 dispatch(요청), update 하여 관리 해준다.
 
 ---
+
+## 2주차 목요일 학습
+
+컨텍스트(Context) API
+
+### Context의 Provider, Consumer를 사용한 데이터 공유
+
+- 부모에서 가지고 있는 data/state를 통신하기 위해 context 이용.
+- 부모에 privider, 자식에 consumer로 설정하여 통신
+- contextCreate 생성, value 설정
+
+### Context 모듈을 활용해 개별 컴포넌트에서 데이터 공유
+
+### Context Type 활용
+
+반드시 클래스 컨포넌트를 사용해야만 한다.
