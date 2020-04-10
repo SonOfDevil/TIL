@@ -399,3 +399,32 @@ https://ko.reactjs.org/docs/events.html#supported-events
 ### Context Type 활용
 
 반드시 클래스 컨포넌트를 사용해야만 한다.
+
+---
+
+## 2주차 금요일 학습
+
+React 접근성(A11Y)
+
+### 헤딩 레벨(Heading Level)
+
+tota11y plugin
+tenon UI Headings 컴포넌트 - 자동으로 heading level을 설정해줌
+
+### 히든 콘텐츠(Hidden Contents)
+
+임의로 css 속성으로 숨기면 스크린 리더에서 읽을 수가 없음.
+.a11y-hidden을 사용 할것.
+
+### 버튼 컴포넌트(Button Component)
+
+button 역할을 하는 것은 div, span, img를 지양하고 button을 사용 할것.
+link, button의 역할르 구분.
+
+### 사용에 주의가 필요한 HTML 표준 문법
+
+### 접근성 자동 검사 (React-axe)
+
+### Semantic UI + React 모달 다이얼로그 접근성 개선
+
+semantic UI 작성을 위한 노력은 역시 학습과 반복 연습뿐이군요... ㅠ.,ㅜ
