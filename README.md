@@ -491,3 +491,38 @@ $ npm start
 ---
 
 ## 3주차 화요일 학습
+
+7. 컴포넌트 이벤트 핸들링 & 타임 컨트롤
+
+### AppNavigation 컴포넌트 이벤트 핸들링, 타임 컨트롤
+
+- menu가 상태값을 가져야만 하므로 React pure to class를 사용해 '클래스 함수'로 변경
+- class, hidden의 시간차를 두어 변경해주어야 animation 적용 할 수 있음
+- menu를 닫을때는 열때와는 반대로 class를 먼저 제거하고 hidden을 추가해줘야 animation이 보여짐
+- 상태 업데이트는 setState()를 사용
+
+8. 리스트 렌더링 & 컨텍스트 Part 1
+
+### Context API → AppNavigation 리스트 렌더링
+
+- context Provider로 json data를 상속 받아 conponent에서 사용 할 수 있게 설정
+- list에 item을 순환하여 data를 뿌려줄때는 map()을 사용하고, key값을 고유하게 설정
+- button conponent를 만들어 재사용하고 내부적으로는 children을 전달하게 구성하여 각각 용도에 맞게 커스텀
+
+9. 컴포넌트 접근성 개선
+
+### 키보드 접근성 (ref, forwardRef, shouldComponentUpdate) 설정
+
+- 키보드 tab을 눌러 포커스가 순환 할때 제대로 작동하도록 설정
+- 메뉴의 기준점을 잡기 위해 메뉴의 첫번째 tab을 잡아줌
+- shift + tab 동작 추가
+- esc 동작 추가
+- conponentDidMount(), shouldComponentUpdate()를 사용
+
+### 컴포넌트 참조 전달(forwardRef)과 개발 도구에서 이름 표시 설정
+
+- forwardRef를 사용 할때, 익명으로 표기 되는데 명칭을 표시하려면 '함수선언'을 사용하거나 displayName을 설정
+
+---
+
+## 3주차 수요일 학습
