@@ -428,3 +428,66 @@ link, button의 역할르 구분.
 ### Semantic UI + React 모달 다이얼로그 접근성 개선
 
 semantic UI 작성을 위한 노력은 역시 학습과 반복 연습뿐이군요... ㅠ.,ㅜ
+
+---
+
+## 3주차 월요일 학습
+
+1. 시작하기
+
+### cra-template-ko-craco 커스텀 템플릿을 사용하여 프로젝트 시작하기
+
+```
+$ npx create-react-app --template cra-template-ko-craco ediya-ui-practice
+$ cd ediya-ui-practice
+$ npm start
+```
+
+해당 프로젝트 폴더로 이동후 npm start로 local server 구동 할것
+
+2. 문서 헤드 구성
+
+### 환경 변수, 퍼블릭 디렉토리 구성, 검색엔진 최적화, 오픈 그래프 프로토콜 설정
+
+- 환경 변수 파일인 env 이름을 .env로 변경
+- index html에 meta data, file path 수정
+
+3. 컴포넌트 디렉토리 구성
+
+### components, api 디렉토리 구성
+
+- src 폴더에 있는 file 교체
+- ediya.json file을 api에 넣기
+
+4. 컴포넌트 구성 Part 1
+
+### AppHeader, AppMain, GoToTop 컴포넌트
+
+- AppHeader, AppMain, GoToTop 컴포넌트를 각각 폴더에 js file 생성 및 App.js에서 import 시킴.
+- AppHeader, AppMain, GoToTop 컴포넌트에 각각의 SCSS 경로 설정
+
+### JSX 코드 정리
+
+- 압축을 푼 index.html에서 각 영역을 module화 하고, className, viewBox, img tag 닫아주고, 외부링크 걸려 있는 부분 rel="noopener noreferrer" 추가
+
+5. 컴포넌트 구성 Part 2
+
+### AppHomeLink, AppNavigation, BeverageList, BeverageItem 컴포넌트
+
+- 각각 module화, scss 연결, 오류나는 부분 임시 비활성화
+
+### 컴포넌트 스타일 관리
+
+- className 변경/제거
+
+6. 컴포넌트 props 디자인
+
+### AppHomeLink 컴포넌트 props 설계
+
+- 기본 module에 외부에서 속성을 전달 해주려면 전개연산자를 통해 props로 설정해 전달해준다.
+- prop-types를 사용해(isRequired) 속성검사
+- 객체분해 할당을 통해 기본 속성을 props에 전개연산자로 전달해주고, 표준속성이 아닌 경우는 따로 설정을 해서 전달해준다.
+
+---
+
+## 3주차 화요일 학습
