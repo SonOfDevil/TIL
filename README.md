@@ -620,3 +620,81 @@ React 폼 컨트롤
 ### 컨트롤 vs 언 컨트롤 컴포넌트, ref 속성
 
 ### React Context를 사용한 데이터 수정 코드 리뷰
+
+---
+
+## 4주차 화요일 학습
+
+React Router 라이브러리 Part 1.
+
+### SPA 라이브러리
+
+서버에 요청되어 렌더링 된 페이지가 하나이며, 다른 페이지로 이동을 하여도 서버에서 새로운 data를 보내지 않아도 아래 조건을 충족하면서 페이지가 표현 되어야 한다.
+
+- 웹 브라우저 주소 창 URL은 변경된 페이지를 식별하는 주소로 변경되어야 합니다. (예: /, /react, /react/props.html)
+- 웹 브라우저의 이전/다음 버튼을 눌렀을 때 페이지가 변경되도록 히스토리 기능이 요구됩니다. (예: ← 이전, → 다음)
+- 직접 URL을 웹 브라우저 주소 창에 입력했을 때 해당 화면이 그려져야 합니다. (예: /react/props.html#props-검사)
+
+### 라우터? 라우트? 라우팅?
+
+라우터 : 길을 찾게 해주는 역할
+라우트 : 길
+라우팅 : 길을 찾는 행위
+
+React Router : URL/Path 분석 -> 설정(config) 읽기 -> 컴포넌트 렌더
+
+### BrowserRouter & HashRouter 컴포넌트
+
+BrowserRouter - URL에 표기 되는 pathname값 설정
+HashRouter - URL pathname값을 hash로 표기(#)
+option을 주어 pathname값 뒤 슬래시를 변경 해줄 수 있다.
+alias에서 as를 사용하여, BrowserRouter/HashRouter를 대체하여 코드사용 할 수 있다.
+
+### Route 컴포넌트 Part 1
+
+- route 컴포넌트는 설정된 path와 매칭되는 컴포넌트를 찾아 UI에 렌더링을 한다.
+- component, render, chilren을 사용하여 router 컴포넌트를 렌더링
+- exact를 사용하여 정확히 match 된 컴포넌트만 렌더링
+
+### Route 컴포넌트 Part 2
+
+- router 컴포넌트의 props : match, location, history
+
+strict - pathname이 완벽하게 같을때만 렌더링
+senstive - pathname의 대소문자 구분하여 렌더링
+
+---
+
+## 4주차 수요일 학습
+
+React Router 라이브러리 Part 2.
+
+### Switch 컴포넌트
+
+- Switch 컴포넌트는 포함하는 <Route>나 <Redirect>중에 URL이 매칭 되는 rounte 한개를 렌더링
+- 원하는 Router만을 렌더링하기 위해서 Switch를 사용하여 정확한 URL을 구분하여 처리하도록 해준다.
+
+### Link 컴포넌트
+
+- 기존의 a요소를 사용하지 않고, link 컴포넌트와 to를 사용하면 서버요청 없이 SPA로 페이지를 연결하여 렌더링 할 수 있다.
+- to를 객체로 설정하여 값/함수를 전달 할 수 있다.
+- props 설정을 사용해 title, id, class, innerRef 등의 속성을 전달 할 수 있다.
+
+### NavLink 컴포넌트
+
+- 특별히 nav에 사용하여 class에 active를 부여하여 활성화된 페이지와 나머지 link의 구분을 할 수 있게 한다.
+- activeClassName을 사용하여 active 되는 link에 class를 임의로 설정 할 수있다.
+- activeStyle을 사용해 active 된 link에 style을 설정 할 수 있다.
+- isActive={func}를 사용해 함수 동작 설정
+- aria-current : page, step, location, date, time, true 설정은 link가 어떤 목적으로 사용되는지 알려주는 목적의 설정
+
+### Redirect 컴포넌트
+
+- to를 사용해 redirect 되는 페이지를 설정 할 수 있다.
+- from to를 사용해 redirect 설정 가능.
+
+### Route 컴포넌트 props 전달
+
+- props를 전달 할때는 render를 사용해 전달하고 전개연산자(...)로 속성값을 함께 전달한다.
+
+### Route 컴포넌트 매개변수(옵션 포함), 쿼리 스트링
