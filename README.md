@@ -698,3 +698,32 @@ React Router 라이브러리 Part 2.
 - props를 전달 할때는 render를 사용해 전달하고 전개연산자(...)로 속성값을 함께 전달한다.
 
 ### Route 컴포넌트 매개변수(옵션 포함), 쿼리 스트링
+
+- 맵개변수를 전달 해주고, 전달 받은 매개변수를 호출해 사용 할 수 있다.
+- 매개변수 뒤에 '?'를 사용하여 매개변수를 사용하지 않았을때도 잘 표현되게 설정
+- npm i query-string
+
+---
+
+## 4주차 목요일 학습
+
+␥ React Router 라이브러리 Part 3.
+
+### 중첩된 라우팅
+
+- React Component : this.props.match
+- React Render : ({match}) => ()
+- React children : ({match}) => ()
+- withRouter : this.props.match
+- matchPath : 반환값(return value)
+
+- nav 안에서 중첩된 카테고리를 표현하기 위해 match를 사용해 표현
+
+### 보호된 라우팅
+
+- 관리자 페이지/특정 페이지에 접근 관리하기 위해 protected rounter를 사용
+- protectedRounter와 redirect를 사용해 페이지 접속 인증을 확인하고, 조건이 충족되지 않으면 원하는 페이지로 redirected 시킨다.
+
+### Redux 통합
+
+- React Router와 Redux를 통합하여 사용하기 위해 widRouter HOC를 사용
